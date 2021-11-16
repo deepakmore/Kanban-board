@@ -7,9 +7,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KanbanViewComponent implements OnInit {
 
+  selectedTask: any;
+  taskName: any;
+
+  flags = {
+    isMoveBackwardEnabled: false,
+    isMoveForwardEnabled: false,
+    isDeleteEnabled: false
+  }
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  onAddCard(): void {
+
+  }
+
+  onMoveBackCard(): void {
+
+  }
+
+  onMoveForwardCard(): void {
+
+  }
+
+  onDeleteCard(): void {
+
+  }
 }

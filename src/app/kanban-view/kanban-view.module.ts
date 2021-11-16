@@ -2,8 +2,8 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {KanbanViewComponent} from './kanban-view.component';
 import {FormsModule} from '@angular/forms';
-import { KanbanCardComponent } from './src/app/kanban-view/kanban-card/kanban-card.component';
-import { KanbanStageComponent } from './src/app/kanban-view/kanban-stage/kanban-stage.component';
+import {KanbanCardComponent} from "./kanban-card/kanban-card.component";
+import {KanbanStageComponent} from "./kanban-stage/kanban-stage.component";
 
 
 @NgModule({

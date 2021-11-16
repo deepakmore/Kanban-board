@@ -1,3 +1,15 @@
-<p>
-  kanban-view works!
-</p>
+<div class='kanban_view'>
+    <div class='kanban_controls'>
+        <div>
+            <input type="text" id="task-name" [(ngModel)]="taskName" placeholder="New Task Name">
+            <button (click)="onAddCard()">Add</button>
+        </div>
+
+        <div style="margin-top: 50px">
+            <input type="text" id="selected-task-name" [(ngModel)]="selectedTask" disabled placeholder="Selected Task will appear">
+            <button [disabled]="!flags.isMoveBackwardEnabled" (click)="onMoveBackCard()">Move Back</button>
+            <button [disabled]="!flags.isMoveForwardEnabled" (click)="onMoveForwardCard()">Move Forward</button>
+            <button [disabled]="!flags.isDeleteEnabled" (click)="onDeleteCard()">Delete</button>
+        </div>
+    </div>
+</div>
