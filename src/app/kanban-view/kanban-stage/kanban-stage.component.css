@@ -1,0 +1,17 @@
+.kanban_stage {
+    background-color: lightgray;
+    min-height: 150px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+}
+
+.stageName {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.cards {
+    margin-top: 15px;
+    justify-content: space-around;
+}

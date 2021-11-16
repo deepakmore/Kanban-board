@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-kanban-stage',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KanbanStageComponent implements OnInit {
 
-  constructor() { }
+  @Input() stage;
+  @Output() onCardselect: EventEmitter<Object> = new EventEmitter<Object>();
+
+  constructor() {}
 
   ngOnInit() {
   }
 
+  onCardSelected(data) {
+    this.onCardselect.emit(data);
+  }
 }
