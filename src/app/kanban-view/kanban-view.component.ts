@@ -10,6 +10,24 @@ export class KanbanViewComponent implements OnInit {
   selectedTask: any;
   taskName: any;
 
+  stages = [{
+    id: 1,
+    name: 'Backlog',
+    cards: [],
+  }, {
+    id: 2,
+    name: 'To Do',
+    cards: [],
+  }, {
+    id: 3,
+    name: 'Ongoing',
+    cards: [],
+  }, {
+    id: 4,
+    name: 'Done',
+    cards: [],
+  }];
+
   flags = {
     isMoveBackwardEnabled: false,
     isMoveForwardEnabled: false,
@@ -34,6 +52,10 @@ export class KanbanViewComponent implements OnInit {
   }
 
   onDeleteCard(): void {
+
+  }
+
+  onCardselect($event: Object) {
 
   }
 }

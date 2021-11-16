@@ -12,4 +12,9 @@
             <button [disabled]="!flags.isDeleteEnabled" (click)="onDeleteCard()">Delete</button>
         </div>
     </div>
+    <div class='kanban_stage_container'>
+        <ng-template ngFor let-stage [ngForOf]="stages" let-i="index">
+            <app-kanban-stage [stage]="stage" (onCardselect)="onCardselect($event)"></app-kanban-stage>
+        </ng-template>
+    </div>
 </div>
