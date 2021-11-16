@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
+import { KanbanViewComponent } from './kanban-view/kanban-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    KanbanViewComponent,
   ],
   imports: [
     BrowserModule,
