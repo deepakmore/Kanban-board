@@ -9,6 +9,7 @@ export class KanbanViewComponent implements OnInit {
 
   selectedTask: any;
   taskName: any;
+  stageIdByTaskName: number;
 
   stages = [{
     id: 1,
@@ -58,7 +59,23 @@ export class KanbanViewComponent implements OnInit {
 
   }
 
-  onCardselect($event: Object) {
+  onCardselect(data) {
+    this.selectedTask = data;
+    this.setStageId();
+    this.checkActionButtonsStatus();
+    this.flags.isDeleteEnabled = true;
+  }
 
+  setStageId(): void {
+    this.stages.forEach(stage => {
+      if (stage.cards.indexOf(this.selectedTask) !== -1) {
+        this.stageIdByTaskName = stage.id;
+      }
+    });
+  }
+
+  checkActionButtonsStatus() {
+    this.flags.isMoveBackwardEnabled = this.stageIdByTaskName != 1;
+    this.flags.isMoveForwardEnabled = this.stageIdByTaskName != 4;
   }
 }
