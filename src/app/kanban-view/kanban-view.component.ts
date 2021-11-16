@@ -40,7 +40,10 @@ export class KanbanViewComponent implements OnInit {
   }
 
   onAddCard(): void {
-
+    if(this.taskName != undefined && this.taskName.trim() !== '') {
+      this.stages[0].cards.push(this.taskName.trim());
+    }
+    this.taskName = "";
   }
 
   onMoveBackCard(): void {
