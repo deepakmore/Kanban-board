@@ -48,11 +48,21 @@ export class KanbanViewComponent implements OnInit {
   }
 
   onMoveBackCard(): void {
-
+    this.moveTask("BACKWARD");
   }
 
   onMoveForwardCard(): void {
+    this.moveTask("FORWARD");
+  }
 
+  moveTask(action): void {
+    let taskToAction = this.selectedTask;
+    this.setStageId();
+    this.removeCard();
+    action === 'FORWARD' ? this.stages[this.stageIdByTaskName].cards.push(taskToAction):
+        this.stages[this.stageIdByTaskName - 2].cards.push(taskToAction);
+    this.setStageId();
+    this.checkActionButtonsStatus();
   }
 
   onDeleteCard(): void {
