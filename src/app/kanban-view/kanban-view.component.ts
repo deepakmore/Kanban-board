@@ -56,7 +56,26 @@ export class KanbanViewComponent implements OnInit {
   }
 
   onDeleteCard(): void {
+    this.removeCard();
+    this.clearSelectedTask();
+    this.disabledActionButtons();
+  }
 
+  removeCard() {
+    let index = this.stages[this.stageIdByTaskName - 1].cards.indexOf(this.selectedTask);
+    if(index !== -1) {
+      this.stages[this.stageIdByTaskName -1].cards.splice(index, 1);
+    }
+  }
+
+  clearSelectedTask() {
+    this.selectedTask = '';
+  }
+
+  disabledActionButtons(): void {
+    this.flags.isMoveForwardEnabled = false;
+    this.flags.isMoveBackwardEnabled = false;
+    this.flags.isDeleteEnabled = false;
   }
 
   onCardselect(data) {
